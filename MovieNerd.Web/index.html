@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+
+    <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body ng-controller="indexController">
+    <div class="container">
+        <div class="input-group" style="padding-bottom:25px; padding-top:25px;">
+                <input type="text" class="form-control" placeholder="Movie Name" ng-model="searchTerm" />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="getMovies()">Search</button>
+                </span>
+        </div>
+
+        <div class="row" style="align-content:center;">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="movie in movies" style=" max-width:430px; padding-bottom:10px;">
+                <div class="panel panel-primary" >
+                    <div class="panel-heading">{{movie.Title}}</div>
+                </div>
+                <div class="panel-body">
+                    <img src="http://cdn.meme.am/instances/500x/63352090.jpg" style="max-height:100%; max-width:100%;" />
+                </div>
+                <div class="panel-footer" style="align-content:center; background-color:darkgrey; color:olive;">Filmed in {{movie.Year}}</div>
+            </div>
+        </div>
+
+    </div>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
