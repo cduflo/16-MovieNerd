@@ -7,18 +7,26 @@
     <meta charset="utf-8" />
 </head>
 <body ng-controller="indexController">
-    <div class="container">
-        <div class="input-group" style="padding-bottom:25px; padding-top:25px;">
-                <input type="text" class="form-control" placeholder="Movie Name" ng-model="searchTerm" />
-                <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="getMovies()">Search</button>
-                </span>
+    <div class="container" style="text-align:center;">
+        <div class="btn-group" role="group" aria-label="..." style="margin: 0 auto; padding:15px">
+            <button type="button" class="btn btn-default" ng-click="changeSearch('all')">All</button>
+            <button type="button" class="btn btn-default" ng-click="changeSearch('movie')">Movies</button>
+             <button type="button" class="btn btn-default" ng-click="changeSearch('series')">TV</button>
         </div>
 
-        <div class="row" style="align-content:center;">
+        <div class="input-group" style="padding-bottom:25px;">
+
+
+            <input type="text" class="form-control" placeholder="Movie Name" ng-model="searchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="getMovies()">Search</button>
+            </span>
+        </div>
+
+       <div class="row" style="align-content:center;">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4" ng-repeat="movie in movies" style=" max-width:430px; padding-bottom:10px;">
-                <div class="panel panel-primary" >
-                    <div class="panel-heading">{{movie.Title}}</div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="height:61px;">{{movie.Title}}</div>
                 </div>
                 <div class="panel-body">
                     <img src="http://cdn.meme.am/instances/500x/63352090.jpg" style="max-height:100%; max-width:100%;" />
